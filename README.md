@@ -1,7 +1,7 @@
 
-# Classifier aggregated SQL Generation
+# SQL Generation through Classification Answer Selector by LLM
 
-## Steps to Reduce
+## Steps to Reproduce
 
 - Install requirements
 - Create .env file with following openai details
