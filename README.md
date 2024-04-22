@@ -1,5 +1,6 @@
 
 # SQL Generation through Classification Answer Selector by LLM
+This repo contains the source code to reporduce result obtained in the shared task EHRSQL 
 
 ## Steps to Reproduce
 
