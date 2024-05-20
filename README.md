@@ -67,3 +67,28 @@ This repo contains the source code to reporduce result obtained in the shared ta
         --classification_data_path <generated classification json file path>
         --final_result_path <directory to save final result path>
         ```
+# Citations
+```
+@inproceedings{lee2024overview,
+author    = {Lee, Gyubok and Kweon, Sunjun and Bae, Seongsu and Choi, Edward},
+
+title     = {Overview of the EHRSQL 2024 Shared Task on Reliable Text-to-SQL Modeling on Electronic Health Records},
+booktitle = {Proceedings of the 6th Clinical Natural Language Processing Workshop},
+month = {June},
+year = {2024},
+address = {Mexico City, Mexico},
+publisher = {Association for Computational Linguistics},
+  year      = {2024}}
+```
+
+
+```
+@article{lee2022ehrsql,
+title={Ehrsql: A practical text-to-sql benchmark for electronic health records},
+author={Lee, Gyubok and Hwang, Hyeonji and Bae, Seongsu and Kwon, Yeonsu and Shin, Woncheol and Yang, Seongjun and Seo, Minjoon and Kim, Jong-Yeup and Choi, Edward},
+journal={Advances in Neural Information Processing Systems},
+volume={35},
+pages={15589--15601},
+year={2022}
+}
+```
