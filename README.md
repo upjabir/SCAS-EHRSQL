@@ -1,6 +1,6 @@
 
-# SQL Generation through Classification Answer Selector by LLM
-This repo contains the source code to reporduce result obtained in the shared task EHRSQL 
+# EHRSQL 2024 shared Task: SQL Generation through Classification Answer Selector by LLM
+This repo contains the source code to reporduce result obtained in the shared task EHRSQL 2024
 
 ## Steps to Reproduce
 
