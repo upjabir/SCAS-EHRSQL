@@ -1,6 +1,6 @@
 
-# EHRSQL 2024 shared Task: SQL Generation through Classification Answer Selector by LLM
-This repo contains the source code to reporduce result obtained in the shared task EHRSQL 2024
+# SQL Generation through Classification Answer Selector by LLM (SCAS)
+This repo contains the source code to reporduce result obtained in the [SCAS](https://aclanthology.org/2024.clinicalnlp-1.63.pdf).
 
 ## Steps to Reproduce
 
@@ -67,28 +67,27 @@ This repo contains the source code to reporduce result obtained in the shared ta
         --classification_data_path <generated classification json file path>
         --final_result_path <directory to save final result path>
         ```
-# Citations
+## Citation
+Please cite with below link. Also, If you have any question, contact to the corresponding author. Thank you
 ```
-@inproceedings{lee2024overview,
-author    = {Lee, Gyubok and Kweon, Sunjun and Bae, Seongsu and Choi, Edward},
-
-title     = {Overview of the EHRSQL 2024 Shared Task on Reliable Text-to-SQL Modeling on Electronic Health Records},
-booktitle = {Proceedings of the 6th Clinical Natural Language Processing Workshop},
-month = {June},
-year = {2024},
-address = {Mexico City, Mexico},
-publisher = {Association for Computational Linguistics},
-  year      = {2024}}
-```
-
-
-```
-@article{lee2022ehrsql,
-title={Ehrsql: A practical text-to-sql benchmark for electronic health records},
-author={Lee, Gyubok and Hwang, Hyeonji and Bae, Seongsu and Kwon, Yeonsu and Shin, Woncheol and Yang, Seongjun and Seo, Minjoon and Kim, Jong-Yeup and Choi, Edward},
-journal={Advances in Neural Information Processing Systems},
-volume={35},
-pages={15589--15601},
-year={2022}
+@inproceedings{jabir-etal-2024-saama,
+    title = "Saama Technologies at {EHRSQL} 2024: {SQL} Generation through Classification Answer Selector by {LLM}",
+    author = "Jabir, Mohammed  and
+      Kanakarajan, Kamal  and
+      Sankarasubbu, Malaikannan",
+    editor = "Naumann, Tristan  and
+      Ben Abacha, Asma  and
+      Bethard, Steven  and
+      Roberts, Kirk  and
+      Bitterman, Danielle",
+    booktitle = "Proceedings of the 6th Clinical Natural Language Processing Workshop",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.clinicalnlp-1.63",
+    doi = "10.18653/v1/2024.clinicalnlp-1.63",
+    pages = "655--671",
+    abstract = "The EHRSQL task aims to develop a dependable text-to-SQL model for Electronic Health Records (EHR) databases, which are crucial sources of clinical data that store patients{'} medical histories in hospitals. Large language models (LLM) have been proven to exhibit state-of-the-art performance for text-to-SQL tasks across various domains. To this end, we have developed a framework, SQL Generation through Classification Answer Selector by LLM (SCAS), which comprises two modules. The CAS module determines the answerability of the question, while the SG model generates the SQL query exclusively for answerable questions. Our system ranked 7th on the leaderboard with a Reliability Score of 53.21 on the official test set.",
 }
 ```
