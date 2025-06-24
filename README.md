@@ -1,45 +1,51 @@
 
 # SQL Generation through Classification Answer Selector by LLM (SCAS)
-This repo contains the source code to reporduce result obtained in the [SCAS](https://aclanthology.org/2024.clinicalnlp-1.63.pdf).
+This repository contains the source code to reproduce the results obtained in the [SCAS](https://aclanthology.org/2024.clinicalnlp-1.63.pdf) paper.
 
 ## Steps to Reproduce
 
-- Install requirements
-- Create .env file with following openai details
-    ```
+- Install requirements.
+- Create a `.env` file in the root directory with your OpenAI API details:
+    ```env
     OPENAI_API_TYPE =    <api_type>
     OPENAI_API_KEY =     <api_key>
     OPENAI_API_BASE =    <api_base>
     OPENAI_API_VERSION = <api_version>
     ```
-- Classification Phase :
-    - For creating custom tokenizer:
-        ```
+
+## Classification Phase
+
+### Create custom tokenizer
+        ```bash
         python cls_tokenizer.py --output_path <output_path>
         ```
-    - For training CodeLLama for sequence classification:
-        ```
+
+### Train CodeLlama for sequence classification
+        ```bash
         torchrun \
         --nproc_per_node 4 cls_code_llama_train.py \
         --model_name "codellama/CodeLlama-7b-Instruct-hf" \
         --gradient_checkpointing \
         --all_linear
         ```
-    - For Generating inference from trained CodeLLama sequence Classifier:
-        ```
+
+### Generate inference from trained CodeLlama sequence classifier
+        ```bash
         python cls_code_llama_infer --model_path <model_path>
         ```
-    - For Generating inference LLM Answer Selector:
-        ```
+
+### Generate inference with LLM Answer Selector
+        ```bash
         python cls_answer_selector.py \
         --code_llama_result_path <codellama result path> \
         --custom_tokenizer_result_path <custom tokenizer result path> \
         --submission_result_path <output path>
         ```
 
-- SQL Generation Phase:
-    - For training CodeLLama:
-        ```    
+## SQL Generation Phase
+
+### Train CodeLlama
+        ```bash
         torchrun \
         --nproc_per_node 4 sql_code_llama_train.py \
         --model_name "codellama/CodeLlama-7b-Instruct-hf" \
@@ -47,29 +53,32 @@ This repo contains the source code to reporduce result obtained in the [SCAS](ht
         --gradient_checkpointing \
         --all_linear \
         ```
-    - Merging the model
-        ```
+
+### Merge the model
+        ```bash
         python merge.py \
         --base_model <base model path>
         --adapter_path <adapter path>
         --output <directory to save merged model>
         ```
-    - For inferencing CodeLLama:
-        ```
+
+### Inference with CodeLlama
+        ```bash
         python sql_code_llama_infer.py \
         --model_path <adapter merged model path> \
         --output_directory <output directory for saving results>
         ```
-    - For abstaining:
-        ```
+
+### Abstaining
+        ```bash
         python abstain.py \
-        ---sql_generated_data_path <generated sql json file path> \
+        --sql_generated_data_path <generated sql json file path> \
         --classification_data_path <generated classification json file path>
         --final_result_path <directory to save final result path>
         ```
 ## Citation
-Please cite with below link. Also, If you have any question, contact to the corresponding author. Thank you
-```
+If you use this work, please cite the paper using the BibTeX entry below. If you have any questions, please contact the corresponding author. Thank you!
+```bibtex
 @inproceedings{jabir-etal-2024-saama,
     title = "Saama Technologies at {EHRSQL} 2024: {SQL} Generation through Classification Answer Selector by {LLM}",
     author = "Jabir, Mohammed  and
